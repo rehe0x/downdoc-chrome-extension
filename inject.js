@@ -1,5 +1,6 @@
 function downdoc(){
    var docid = $("#morenId").val()
-   window.postMessage({"docid": docid}, '*');
+   var title = $(".youkexx-title > h1:first-child").text()
+   window.postMessage({"docid": docid,"title":title}, '*');
    //alert(docid)
 }

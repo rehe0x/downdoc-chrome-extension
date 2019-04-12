@@ -11,11 +11,13 @@ window.addEventListener("message", function(e)
     if(e.data.docid == undefined || e.data.docid == ''){
         return;
     }
+    console.log(e.data.title)
     console.log(e.data.docid);
     $("body").mLoading();
     chrome.runtime.sendMessage(
         {
-            did:e.data.docid
+            did:e.data.docid,
+            title:e.data.title
         }, 
         function(response) {
             console.log('收到来自后台的回复：' + response.responseText);

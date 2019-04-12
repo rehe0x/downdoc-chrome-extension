@@ -3,10 +3,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
 {
 
     var docid = request.did
-
+    var title = request.title
     $.ajax({  
         type: "GET",  
-        url: 'http://140.143.208.158:8000/downdoc?docid='+docid,
+        url: 'http://127.0.0.1:8000/downdoc?docid='+docid+'&title='+title,
         dataType: "json",  
         async: false,
         success: function(data){
